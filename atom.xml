@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>小小怪将军</title>
+  <title>MyBlog</title>
   
   <subtitle>人性的背后是白云苍狗,愿我们都做生活的高手</subtitle>
   <link href="http://example.com/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>http://example.com/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>小小怪将军</name>
     
   </author>
   
