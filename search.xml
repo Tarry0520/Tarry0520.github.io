@@ -1,36 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
+    <title>Git命令</title>
     <url>/2023/10/19/Git%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<hr>
-<h2 id="title-Git命令tags-Git"><a href="#title-Git命令tags-Git" class="headerlink" title="title:Git命令tags:Git"></a>title:Git命令<br>tags:Git</h2><ul>
-<li><p>创建分支并建立远程分支</p>
-<ul>
-<li><pre><code>git checkout 分支名 //基于哪个分支创建就切换到哪个分支
-
-git checkout -b 分支名 //创建本地分支并切换
-
-
-$ git push --set-upstream origin 分支名 //连接远程并创建远程分支(直接使用跟本地分支同名的分支名)
-
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">- 修改分支名</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</code></pre>
-</li>
-</ul>
-<p>git branch -m oldName newName</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">- 切换远程分支</span><br><span class="line"></span><br><span class="line">  - ```</span><br><span class="line">    需要本地分支和远程分支建立映射关系</span><br><span class="line">    git checkout -b 本地分支名xxx origin/远程分支名xxx</span><br><span class="line">    </span><br><span class="line">    不需要本地分支和远程分支建立映射关系</span><br><span class="line">    git fetch origin 远程分支名xxx:本地分支名xxx</span><br></pre></td></tr></table></figure>
-
-</li>
-<li><p>回滚某次提交</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">回滚到之前某一版本且该版本后的提交都不需要</span><br><span class="line">	首先使用git log命令查看版本号(commit后就是版本号)</span><br><span class="line">	git reset --hard 版本号 回滚到之前某版本，此时本地已经回滚，远程仓库还未回滚</span><br><span class="line">	git push -f 回滚远程仓库版本</span><br><span class="line"></span><br><span class="line">回滚到之前某一版本但该版本后的提交仍需保留</span><br><span class="line">    1）首先使用git log命令查看版本号(commit后就是版本号)</span><br><span class="line">    2）git revert -n 版本号回滚到之前版本</span><br><span class="line">    3） git commit &quot;备注信息&quot; 提交</span><br><span class="line">    4）git push 推送至远程仓库</span><br><span class="line"></span><br><span class="line">git commit但未push  把修改撤销到工作区中</span><br><span class="line">	使用 git reset --soft HEAD^ 命令，撤销了commit 代码依然保留</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<ul>
+<li><h4 id="创建分支并建立远程分支"><a href="#创建分支并建立远程分支" class="headerlink" title="创建分支并建立远程分支"></a>创建分支并建立远程分支</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git checkout 分支名 //基于哪个分支创建就切换到哪个分支</span><br><span class="line"></span><br><span class="line">git checkout -b 分支名 //创建本地分支并切换</span><br><span class="line"></span><br><span class="line">git push --set-upstream origin 分支名 //连接远程并创建远程分支(直接使用跟本地分支同名的分支名)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 </li>
-<li><p>修改最近一次commit的信息</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git commit --amend</span><br><span class="line">git push -f</span><br></pre></td></tr></table></figure></li>
+<li><h4 id="修改分支名"><a href="#修改分支名" class="headerlink" title="修改分支名"></a>修改分支名</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch -m oldName newName</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><h4 id="切换远程分支"><a href="#切换远程分支" class="headerlink" title="切换远程分支"></a>切换远程分支</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">需要本地分支和远程分支建立映射关系</span><br><span class="line">git checkout -b 本地分支名xxx origin/远程分支名xxx</span><br><span class="line"></span><br><span class="line">不需要本地分支和远程分支建立映射关系</span><br><span class="line">git fetch origin 远程分支名xxx:本地分支名xxx</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><h4 id="回滚某次提交"><a href="#回滚某次提交" class="headerlink" title="回滚某次提交"></a>回滚某次提交</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">回滚到之前某一版本且该版本后的提交都不需要</span><br><span class="line">	首先使用git log命令查看版本号(commit后就是版本号)</span><br><span class="line">	git reset --hard 版本号 回滚到之前某版本，此时本地已经回滚，远程仓库还未回滚</span><br><span class="line">	git push -f 回滚远程仓库版本</span><br><span class="line"></span><br><span class="line">回滚到之前某一版本但该版本后的提交仍需保留</span><br><span class="line">    1）首先使用git log命令查看版本号(commit后就是版本号)</span><br><span class="line">    2）git revert -n 版本号回滚到之前版本</span><br><span class="line">    3） git commit &quot;备注信息&quot; 提交</span><br><span class="line">    4）git push 推送至远程仓库</span><br><span class="line"></span><br><span class="line">git commit但未push  把修改撤销到工作区中</span><br><span class="line">	使用 git reset --soft HEAD^ 命令，撤销了commit 代码依然保留</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><h4 id="修改最近一次commit的信息"><a href="#修改最近一次commit的信息" class="headerlink" title="修改最近一次commit的信息"></a>修改最近一次commit的信息</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git commit --amend</span><br><span class="line">git push -f</span><br></pre></td></tr></table></figure></li>
 </ul>
 ]]></content>
+      <tags>
+        <tag>Git</tag>
+      </tags>
   </entry>
 </search>

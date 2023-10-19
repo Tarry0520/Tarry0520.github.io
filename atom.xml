@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-10-19T15:37:07.326Z</updated>
+  <updated>2023-10-19T15:45:05.097Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,21 +17,23 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>Git命令</title>
     <link href="http://example.com/2023/10/19/Git%E5%91%BD%E4%BB%A4/"/>
     <id>http://example.com/2023/10/19/Git%E5%91%BD%E4%BB%A4/</id>
-    <published>2023-10-19T15:35:16.168Z</published>
-    <updated>2023-10-19T15:37:07.326Z</updated>
+    <published>2023-10-19T15:40:38.000Z</published>
+    <updated>2023-10-19T15:45:05.097Z</updated>
     
     
       
       
-    <summary type="html">&lt;hr&gt;
-&lt;h2 id=&quot;title-Git命令tags-Git&quot;&gt;&lt;a href=&quot;#title-Git命令tags-Git&quot; class=&quot;headerlink&quot; title=&quot;title:Git命令tags:Git&quot;&gt;&lt;/a&gt;title:Git命令&lt;br&gt;tags:Git&lt;</summary>
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;创建分支并建立远程分支&quot;&gt;&lt;a href=&quot;#创建分支并建立远程分支&quot; class=&quot;headerlink&quot; title=&quot;创建分支并建立远程分支&quot;&gt;&lt;/a&gt;创建分支并建立远程分支&lt;/h4&gt;&lt;figure class=&quot;highlight pla</summary>
       
     
     
     
+    
+    <category term="Git" scheme="http://example.com/tags/Git/"/>
     
   </entry>
   
