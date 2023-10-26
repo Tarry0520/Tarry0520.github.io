@@ -29,8 +29,9 @@
 <meta property="og:description" content="MySQL基础MySQL概述数据库相关概念   名称 全称 简称    数据库 存储数据的仓库,数据是有组织的进行存储 DataBase(DB)   数据库管理系统 操作和管理数据库的大型软件 DataBase Management System (DBMS)   SQL 操作关系型数据的编程语言,定义了一套操作关系数据库统一标准 Structured Query Language(SQL)">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitee.com/tan-huaqing/drawing-bed/raw/master/imag/image-20231024234802798.png">
+<meta property="og:image" content="https://gitee.com/tan-huaqing/drawing-bed/raw/master/imag/image-20231026233748599.png">
 <meta property="article:published_time" content="2023-10-24T15:06:19.000Z">
-<meta property="article:modified_time" content="2023-10-25T01:34:31.185Z">
+<meta property="article:modified_time" content="2023-10-26T16:08:49.386Z">
 <meta property="article:author" content="小小怪将军">
 <meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
@@ -144,7 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">MySQL基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">MySQL概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.1.</span> <span class="nav-text">数据库相关概念</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL"><span class="nav-number">1.2.</span> <span class="nav-text">SQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">1.3.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%A6%E6%9D%9F"><span class="nav-number">1.4.</span> <span class="nav-text">约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.5.</span> <span class="nav-text">多表查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1"><span class="nav-number">1.6.</span> <span class="nav-text">事务</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">MySQL基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">MySQL概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.1.</span> <span class="nav-text">数据库相关概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.1.2.</span> <span class="nav-text">数据模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93-RDBMS"><span class="nav-number">1.1.3.</span> <span class="nav-text">关系型数据库(RDBMS)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL"><span class="nav-number">1.2.</span> <span class="nav-text">SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SQL%E9%80%9A%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="nav-number">1.2.1.</span> <span class="nav-text">SQL通用语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SQL%E5%88%86%E7%B1%BB"><span class="nav-number">1.2.2.</span> <span class="nav-text">SQL分类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#DDL"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">DDL</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DML"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">DML</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DQL"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">DQL</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DCL"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">DCL</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">1.3.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%A6%E6%9D%9F"><span class="nav-number">1.4.</span> <span class="nav-text">约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.5.</span> <span class="nav-text">多表查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1"><span class="nav-number">1.6.</span> <span class="nav-text">事务</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -238,7 +239,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-25 09:34:31" itemprop="dateModified" datetime="2023-10-25T09:34:31+08:00">2023-10-25</time>
+      <time title="修改时间：2023-10-27 00:08:49" itemprop="dateModified" datetime="2023-10-27T00:08:49+08:00">2023-10-27</time>
     </span>
 
   
@@ -255,14 +256,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>522</span>
+      <span>1.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -321,14 +322,12 @@
 </ul>
 </li>
 <li><p>环境配置以及安装(<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_63112274/article/details/130517120"></a>)</p>
-</li>
-<li><p>数据模型</p>
-<ul>
+<h4 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h4><ul>
 <li><p>客户端操作MySQL数据库服务器</p>
 <ul>
 <li><p>客户端向MySQL数据库服务器发送SQL语句</p>
 </li>
-<li><p>MySQL数据库服务器中有DBMS</p>
+<li><p>MySQL数据库服务器中有DBMS(数据库管理系统)</p>
 <ul>
 <li><p>DBMS回去操作我们的数据库(不止一个)</p>
 </li>
@@ -342,7 +341,83 @@
 </ul>
 </li>
 </ul>
-<h3 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h3><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><h3 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h3><h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3>
+<h4 id="关系型数据库-RDBMS"><a href="#关系型数据库-RDBMS" class="headerlink" title="关系型数据库(RDBMS)"></a>关系型数据库(RDBMS)</h4><blockquote>
+<p>概念:建立在关系模型基础上,由多张相互连接的二位表组成的数据库</p>
+<p>特点:</p>
+<ol>
+<li><p>使用表存储数据,格式统一,便于维护</p>
+</li>
+<li><p>使用SQL语言操作,标准统一,使用方便</p>
+<p><img src="https://gitee.com/tan-huaqing/drawing-bed/raw/master/imag/image-20231026233748599.png" alt="image-20231026233748599"></p>
+</li>
+</ol>
+</blockquote>
+<h3 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h3><h4 id="SQL通用语法"><a href="#SQL通用语法" class="headerlink" title="SQL通用语法"></a>SQL通用语法</h4><ul>
+<li>SQL通用语法<ol>
+<li>SQL语句通常可以单行或多行书写,以分好结尾</li>
+<li>SQL语句可以使用空格&#x2F;缩进来增强语句的可读性</li>
+<li>MySQL数据库的SQL语句不区分大小写,关键字建议使用大写</li>
+<li>注释:<ul>
+<li>单行注释: <code>--</code>注释内容或<code>#</code>注释内容(MySQL等)</li>
+<li>多行注释:<code> /*注释内容*/</code></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="SQL分类"><a href="#SQL分类" class="headerlink" title="SQL分类"></a>SQL分类</h4><table>
+<thead>
+<tr>
+<th align="center">分类</th>
+<th align="center">全称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">DDL</td>
+<td align="center">Data Definition Language</td>
+<td align="center">数据定义语言,用来定义数据库对象(数据库,表,字段)</td>
+</tr>
+<tr>
+<td align="center">DML</td>
+<td align="center">Data Manipulation Language</td>
+<td align="center">数据操作语言,用来对数据库表中的数据进行增删改</td>
+</tr>
+<tr>
+<td align="center">DQL</td>
+<td align="center">Data Query Language</td>
+<td align="center">数据查询语言,用来查询数据库中表的记录</td>
+</tr>
+<tr>
+<td align="center">DCL</td>
+<td align="center">Data Control Language</td>
+<td align="center">数据控制语言,用来创建数据库用户、控制数据库的访问权限</td>
+</tr>
+</tbody></table>
+<h5 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h5><ul>
+<li><p>DDL-数据库操作</p>
+<ul>
+<li><p>查询</p>
+<ul>
+<li><p>查询所有数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW DATABASES;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询当前数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT DATABASE();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>创建</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE [IF NOT EXISTS] 数据库名 [DEFAULT CHARSET 字符集(utf8mb4)] [COLLATE 排序规则] </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP DATABASE</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">USE 数据库名;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h5 id="DML"><a href="#DML" class="headerlink" title="DML"></a>DML</h5><h5 id="DQL"><a href="#DQL" class="headerlink" title="DQL"></a>DQL</h5><h5 id="DCL"><a href="#DCL" class="headerlink" title="DCL"></a>DCL</h5><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><h3 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h3><h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3>
     </div>
 
     
