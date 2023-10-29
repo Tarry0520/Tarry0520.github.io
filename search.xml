@@ -419,7 +419,192 @@
 <li><p>删除数据(DELETE)</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DELETE FROM 表名 [where 条件]</span><br><span class="line"></span><br><span class="line">不能删除某个字段的数据(请使用update 值为null)</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h5 id="DQL"><a href="#DQL" class="headerlink" title="DQL"></a>DQL</h5><h5 id="DCL"><a href="#DCL" class="headerlink" title="DCL"></a>DCL</h5><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><h3 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h3><h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3>]]></content>
+<h5 id="DQL"><a href="#DQL" class="headerlink" title="DQL"></a>DQL</h5><ul>
+<li><p>DQL-执行顺序</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT 字段列表</span><br><span class="line">FROM 表名</span><br><span class="line">WhERE 条件列表</span><br><span class="line">GROUP BY 分组字段列表</span><br><span class="line">HAVING 分组后条件列表</span><br><span class="line">ORDER BY 排序字段列表</span><br><span class="line">LIMIT 分页参数 </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>DQL-基本查询</p>
+<ul>
+<li><p>查询多个字段</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT 字段1,字段2,字段3... FROM 表名;</span><br><span class="line">SELECT * FROM 表名;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置别名</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT 字段1 [AS 别名1],字段2 [AS 别名2] ... FROM 表名;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>去除重复记录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT DISTINCT 字段列表 FROM 表名;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>DQL-条件查询</p>
+<ul>
+<li><p>语法</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT 字段列表 FROM 表名 WHERE 条件列表;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>条件</p>
+<table>
+<thead>
+<tr>
+<th align="center">比较运算符</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&gt;</td>
+<td align="center">大于</td>
+</tr>
+<tr>
+<td align="center">&gt;&#x3D;</td>
+<td align="center">大于等于</td>
+</tr>
+<tr>
+<td align="center">&lt;</td>
+<td align="center">小于</td>
+</tr>
+<tr>
+<td align="center">&lt;&#x3D;</td>
+<td align="center">小于等于</td>
+</tr>
+<tr>
+<td align="center">&#x3D;</td>
+<td align="center">等于</td>
+</tr>
+<tr>
+<td align="center">&lt;&gt; 或 !&#x3D;</td>
+<td align="center">不等于</td>
+</tr>
+<tr>
+<td align="center">BETWEEN … AND …</td>
+<td align="center">在某个范围之内(含最小\最大值)</td>
+</tr>
+<tr>
+<td align="center">IN(…)</td>
+<td align="center">在in之后的列表中的值,多选一</td>
+</tr>
+<tr>
+<td align="center">LIKE 占位符(_)</td>
+<td align="center">模糊匹配(匹配单个字符,%匹配任意个字符)</td>
+</tr>
+<tr>
+<td align="center">IS NULL</td>
+<td align="center">是NULL</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">逻辑运算符</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">AND 或 &amp;&amp;</td>
+<td>并且(多个条件同时成立)</td>
+</tr>
+<tr>
+<td align="center">OR 或 ||</td>
+<td>或者(多个条件任意一个成立)</td>
+</tr>
+<tr>
+<td align="center">NOT 或 !</td>
+<td>非,不是</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>DQL-聚合函数</p>
+<ol>
+<li><p>讲一列数据作为一个整体进行纵向计算</p>
+</li>
+<li><p>常见的聚合函数</p>
+<table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">count</td>
+<td align="center">统计数量</td>
+</tr>
+<tr>
+<td align="center">max</td>
+<td align="center">最大值</td>
+</tr>
+<tr>
+<td align="center">min</td>
+<td align="center">最小值</td>
+</tr>
+<tr>
+<td align="center">avg</td>
+<td align="center">平均值</td>
+</tr>
+<tr>
+<td align="center">sum</td>
+<td align="center">求和</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>语法</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT 聚合函数(字段列表) FROM 表名;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意:null值不参与所有聚合函数运算</p>
+</li>
+</ol>
+</li>
+<li><p>DQL-分组查询</p>
+<ol>
+<li><p>语法</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT 字段列表 FROM 表名 [WHERE 条件] GROUP BY 分组字段名 [HAVING 分组后过滤条件];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>where 与 having 区别</p>
+<ul>
+<li>执行时机不同:where是分组之前进行过滤,不满足where条件,不参与分组;而having是分组之后对结果进行过滤</li>
+<li>判断条件不同:where不能对聚合函数进行判断,而having可以</li>
+</ul>
+</li>
+<li><p>注意:</p>
+<ul>
+<li>执行顺序:where &gt;聚合函数&gt;having</li>
+<li>分组之后,查询的字段一般为聚合函数和分组字段,查询其他字段无任何意义</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>DQL-排序查询</p>
+<ol>
+<li><p>语法</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT 字段列表 FROM 表名 ORDER BY 字段1 排序方式1,字段2 排序方式2;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>排序方式</p>
+<ul>
+<li>ASC:升序(默认)</li>
+<li>DESC:降序</li>
+</ul>
+</li>
+<li><p>注意:如果是多字段排序,当第一个字段值相同时,才会根据第二个字段进行排序</p>
+</li>
+</ol>
+</li>
+<li><p>DQL-分页查询</p>
+<ol>
+<li><p>语法</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT 字段列表 FROM 表名 LIMIT 起始索引,查询记录数;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意:</p>
+<ul>
+<li>起始索引从0开始&#x3D;(查询页码-1)*每页显示记录数</li>
+<li>分页查询是数据库的方言,不同的数据库有不同的实现,MySQL中是LIMIT</li>
+<li>如果查询的是第一页数据,起始索引可以省略,直接简写为limit 10</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>DQL-执行顺序</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FROM 表名列表</span><br><span class="line">WHERE 条件列表</span><br><span class="line">GROUP BY 分组子段列表</span><br><span class="line">HAVING 分组后条件列表</span><br><span class="line">SELECT 字段列表</span><br><span class="line">ORDER BY 排序字段列表</span><br><span class="line">LIMIT 分页参数</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="DCL"><a href="#DCL" class="headerlink" title="DCL"></a>DCL</h5><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><h3 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h3><h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3>]]></content>
       <tags>
         <tag>MySQL</tag>
       </tags>
